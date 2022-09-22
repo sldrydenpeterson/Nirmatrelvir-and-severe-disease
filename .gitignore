@@ -32,4 +32,5 @@ vignettes/*.pdf
 *.xlsx
 *.zshrc
 *.Rproj.user
+Nirmatrelvir dataset formation.R
 
