@@ -30,7 +30,11 @@ vignettes/*.pdf
 .DS_Store
 # zsh files
 *.xlsx
+*.docx
+*.png
+*.pdf
 *.zshrc
 *.Rproj.user
 Nirmatrelvir dataset formation.R
 Nirmatrelvir ADI.R
+nejm calit simulation.R
