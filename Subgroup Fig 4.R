@@ -13,7 +13,7 @@ overall<-
              (geepack::geeglm(
                covid_admit_death ~ paxlovid,
                family = poisson(link=log),
-               weights = sw.overall,
+               weights = sw.pax,
                id = seqn,
                corstr = "independence",
                data = enclave.clean.outptdx),
@@ -36,7 +36,7 @@ overall<-
     geepack::geeglm(
       covid_admit_death ~ paxlovid,
       family = poisson(link=log),
-      weights = sw.overall,
+      weights = sw.pax,
       id = seqn,
       corstr = "independence",
       data = enclave.clean.outptdx)  %>%
@@ -56,7 +56,7 @@ age<-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -84,7 +84,7 @@ age<-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -113,7 +113,7 @@ age<-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data = enclave.clean.outptdx %>% 
@@ -136,7 +136,7 @@ age<-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data = enclave.clean.outptdx %>% 
@@ -169,7 +169,7 @@ vaxstatus<-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -195,7 +195,7 @@ vaxstatus<-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -221,7 +221,7 @@ vaxstatus<-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data = enclave.clean.outptdx %>% filter(vaxstatus.collapsed == "Not fully vaccinated" ) )%>%
@@ -240,7 +240,7 @@ vaxstatus<-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data = enclave.clean.outptdx %>% filter(vaxstatus.collapsed == "Vaccinated")) %>%
@@ -268,7 +268,7 @@ vaxtiming <-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -294,7 +294,7 @@ vaxtiming <-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -322,7 +322,7 @@ vaxtiming <-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data = enclave.clean.outptdx %>% filter(lastvaxgt20wks == 1)) %>%
@@ -341,7 +341,7 @@ vaxtiming <-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data = enclave.clean.outptdx %>% filter(lastvaxgt20wks == 0)) %>%
@@ -370,7 +370,7 @@ MASSscore <-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -398,7 +398,7 @@ MASSscore <-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -427,7 +427,7 @@ MASSscore <-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data = enclave.clean.outptdx %>% 
@@ -451,7 +451,7 @@ MASSscore <-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data = enclave.clean.outptdx %>% 
@@ -483,7 +483,7 @@ immunocompromise <-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -511,7 +511,7 @@ immunocompromise <-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -541,7 +541,7 @@ immunocompromise <-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data = enclave.clean.outptdx %>% filter(MASS.ic == 3)) %>%
@@ -560,7 +560,7 @@ immunocompromise <-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data = enclave.clean.outptdx %>% filter(MASS.ic == 0)) %>%
@@ -592,7 +592,7 @@ obesity <-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -625,7 +625,7 @@ obesity <-
                (geepack::geeglm(
                  covid_admit_death ~ paxlovid,
                  family = poisson(link=log),
-                 weights = sw.overall,
+                 weights = sw.pax,
                  id = seqn,
                  corstr = "independence",
                  data =  enclave.clean.outptdx %>% 
@@ -658,7 +658,7 @@ obesity <-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data =  enclave.clean.outptdx %>% 
@@ -685,7 +685,7 @@ obesity <-
         geepack::geeglm(
           covid_admit_death ~ paxlovid,
           family = poisson(link=log),
-          weights = sw.overall,
+          weights = sw.pax,
           id = seqn,
           corstr = "independence",
           data = enclave.clean.outptdx %>% 
@@ -803,7 +803,7 @@ p <- forest(forest.dt[,c(1:5, 10:11)],
             #sizes = forest.dt$std.err,
             ci_column = 6,
             ref_line = 1,
-            vert_line = 0.579,
+            vert_line = exp(overall$estimate),
             arrow_lab = c("Nirmatrelvir better", "Nirmatrelvir poorer"),
             xlim = c(0, 1.7),
             ticks_at = c(0.1, 0.5, 1, 1.5),

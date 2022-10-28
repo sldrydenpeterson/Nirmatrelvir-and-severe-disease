@@ -27,7 +27,7 @@ survival <- enclave.clean.outptdx %>%
         paxlovid == 0 ~ "No nirmatrelvir")), "No nirmatrelvir")
   )
 cox_mod <- coxph(Surv(futime, covid_admit_death) ~ paxlovid.fct,
-                 data=survival, x=TRUE, weights = sw.overall)
+                 data=survival, x=TRUE, weights = sw.pax)
 tidy(cox_mod,conf.int = TRUE, exponentiate = TRUE)
 
 # calculate adjusted survival curves with survival object
@@ -63,7 +63,7 @@ cum_primary
 
 #secondary endpoint Death
 cox_mod <- coxph(Surv(futime, death.4wks) ~ paxlovid.fct,
-                 data=survival, x=TRUE, weights = sw.overall)
+                 data=survival, x=TRUE, weights = sw.pax)
 tidy(cox_mod,conf.int = TRUE, exponentiate = TRUE)
 
 # use it to calculate adjusted survival curves
@@ -101,7 +101,7 @@ cum_deaths
 #secondary endpoint hospitalization
 
 cox_mod <- coxph(Surv(futime, covid_admit) ~ paxlovid.fct,
-                 data=survival, x=TRUE, weights = sw.overall)
+                 data=survival, x=TRUE, weights = sw.pax)
 tidy(cox_mod,conf.int = TRUE, exponentiate = TRUE)
 
 # use it to calculate adjusted survival curves
