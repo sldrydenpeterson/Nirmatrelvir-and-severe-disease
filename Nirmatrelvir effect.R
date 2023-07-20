@@ -27,8 +27,8 @@ enclave.clean<- enclave.total %>%
   filter(state == "Massachusetts" | state == "New Hampshire") %>%  #include those with positive recorded test Jan 21 or later, and residing in MA/NH
   filter(is.na(molnupiravir_date) |  molnupiravir_date >  covid_date+1) %>%  # remove those that received molnupiravir within 2d of covid diagnosis
   filter(is.na(sotrovimab_date) |  sotrovimab_date >  covid_date+2) %>%      # remove those that received sotrovimab within 3d of covid diagnosis
-  filter(is.na(bebtelovimab_date) |  bebtelovimab_date >  covid_date+2) %>%      # remove those that received bebtelovimab within 30d of covid diagnosis
-  filter(is.na(remdesivir_date) |  remdesivir_date >  covid_date+2) %>%      # remove those that received bebtelovimab within 30d of covid diagnosis
+  filter(is.na(bebtelovimab_date) |  bebtelovimab_date >  covid_date+2) %>%      # remove those that received bebtelovimab within 2d of covid diagnosis
+  filter(is.na(remdesivir_date) |  remdesivir_date >  covid_date+2) %>%      # remove those that received remdesivir within 2d of covid diagnosis
   filter(contraindicated != 1) %>%  # remove those with eGFR <30 and with contraindicated meds
   
   select(EMPI, seqn, MASS.cat, age.cat, vaxstatus.collapsed, vaxstatus, lastvaxgt20wks, race.eth,  highADI, outpatient.coviddx, paxlovid, paxlovid_date,
